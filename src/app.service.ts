@@ -72,7 +72,7 @@ export class ObjectDetectionService {
   }
 
   private async runModel(input: number[]): Promise<Float32Array> {
-    const modelPath = join(process.cwd(), 'fs', 'yolo', 'yolov8m.onnx');
+    const modelPath = join(process.cwd(), 'fs', 'yolo', 'yolov8s.onnx');
     const model = await ort.InferenceSession.create(modelPath);
     const inputTensor = new ort.Tensor(
       Float32Array.from(input),
