@@ -1,3 +1,5 @@
+<p align="center">Object detection on pure Typescript</p>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 <a href="http://nestjs.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/9950313?s=200&v=4" width="200" alt="Node Logo" /></a>
@@ -6,7 +8,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">NestJS a progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -27,7 +29,15 @@
 
 This microservice for object detection is written in pure Typescript, Node.js and NestJS.
 The microservice uses onnx.js which is a javascript library that allows you to run the onnx format for AI models on a browser or on node.js
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+To work, you need one of the yolo8 models converted to the onnx format, for example, the yolov8s.pt model must be converted to the yolov8.onxx format.
+For example, you can convert using this Python code.
+
+```python
+pip install ultralytics
+from ultralytics import YOLO
+model = YOLO("yolov8s.pt")
+model.export(format="onnx")
+```
 ## Installation
 
 ```bash
